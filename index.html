@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>College Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./images/fav.jfif">
+</head>
+
+<body id="top">
+
+    <div id="successTick" class="success-popup">
+        <div class="tick-circle">✔</div>
+        <div class="tick-text">
+            <strong>Selection Saved</strong>
+            <span>Proceeding to dashboard...</span>
+        </div>
+    </div>
+
+    <div id="collegeForm" class="college-bg">
+            <h1>Select Your College</h1>
+
+            <div class="college-grid">
+                <div class="college-card" onclick="selectCollege('ruparel', this)">
+                    <div class="card-image-wrapper">
+                        <img src="images/ruparel/c1.jpeg" alt="Ruparel College">
+                    </div>
+                    <div class="card-content">
+                        <h3>D.G. Ruparel College</h3>
+                    </div>
+                </div>
+
+                <div class="college-card" onclick="selectCollege('kelkar', this)">
+                    <div class="card-image-wrapper">
+                        <img src="images/kelkar/c1.png" alt="Kelkar College">
+                    </div>
+                    <div class="card-content">
+                        <h3>Kelkar College</h3>
+                    </div>
+                </div>
+
+                <div class="college-card" onclick="selectCollege('dav', this)">
+                    <div class="card-image-wrapper">
+                        <img src="images/dav/c1.jpeg" alt="DAV College">
+                    </div>
+                    <div class="card-content">
+                        <h3>DAV College</h3>
+                    </div>
+                </div>
+
+                <div class="college-card" onclick="selectCollege('mulund', this)">
+                    <div class="card-image-wrapper">
+                        <img src="images/mulund/c1.jpeg" alt="MCC College">
+                    </div>
+                    <div class="card-content">
+                        <h3>Mulund College</h3>
+                    </div>
+                </div>
+                <div class="college-card" onclick="selectCollege('somaiya', this)">
+                    <div class="card-image-wrapper">
+                        <img src="images/somaiya/c1.jpeg" alt="Somaiya College">
+                    </div>
+                    <div class="card-content">
+                        <h3>Somaiya College</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-area">
+                <button id="enterBtn" class="premium-btn" onclick="handleEntry()">
+                    <span>Enter Website</span>
+                    <i class="arrow-icon">→</i>
+                </button>
+            </div>
+        </div>
+        
+        <select id="collegeSelect" hidden></select>
+    </div>
+
+    <!-- ========== MAIN WEBSITE ========== -->
+    <div id="website" class="hidden">
+        <div class="contact-float">
+            <button class="main-btn" onclick="toggleContact()">
+                ☎
+            </button>
+        
+            <div class="contact-options" id="contactOptions">
+                <a href="tel:+919876543210" class="contact-item call">
+                    📞 Call Us Now
+                </a>
+                <a href="https://wa.me/919594662086" target="_blank" class="contact-item whatsapp">
+                    💬 Chat With Us
+                </a>
+            </div>
+        </div>
+
+        <!-- ===== HEADER ===== -->
+        <header id="siteHeader">
+            <div class="header-left">
+                <img id="collegeLogo" class="logo">
+                <span id="headerCollegeName"></span>
+            </div>
+
+            <nav class="header-right">
+                <a href="./index.html">Home</a>
+                <a href="./reviews.html">Reviews</a>
+                <a href="./faq.html">FAQs</a>
+                <a href="./faculty.html">Faculty</a>
+                <a href="./academics.html">Academics</a>
+                <a href="./contact.html">Contact</a>
+                <a href="./event.html">Events</a>
+                <a href="./courses.html">Courses</a>
+                <a href="./admission.html">Admission</a>
+                <a href="./fees.html">Fees</a>
+            </nav>
+        </header>
+
+        <!-- ===== HERO SECTION ===== -->
+        <section id="hero" class="hero">
+            <div class="hero-overlay">
+                <h1>Welcome to <span id="collegeName"></span></h1>
+                <p id="paragraph"></p>
+            </div>
+        </section>
+
+      
+
+       
+        <!-- ===== GALLERY ===== -->
+        <section id="gallery">
+            <h2>Campus Gallery</h2>
+
+            <div class="slider-container">
+                <div class="slider-wrapper" id="sliderWrapper">
+                    <img id="slide1">
+                    <img id="slide2">
+                    <img id="slide3">
+                    <img id="slide4">
+                    <img id="slide5">
+                </div>
+
+                <button class="nav prev" onclick="prevSlide()">❮</button>
+                <button class="nav next" onclick="nextSlide()">❯</button>
+            </div>
+        </section>
+
+
+          <!-- ===== FEATURES SECTION ===== -->
+          <section class="features-section">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h3>Certified Teachers</h3>
+                    <p>Our team of certified educators brings proven expertise, professional training, and a deep commitment to student success.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </div>
+                    <h3>Special Education</h3>
+                    <p>Our Special Education program is designed to support students with diverse learning needs through personalized instruction and dedicated support services.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            <circle cx="12" cy="8" r="2" fill="white"></circle>
+                        </svg>
+                    </div>
+                    <h3>Book & Library</h3>
+                    <p>Our well-stocked library offers a rich collection of books, journals, and digital resources to inspire learning and research.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                            <path d="M4 22h16"></path>
+                            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                            <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path>
+                        </svg>
+                    </div>
+                    <h3>Sport Clubs</h3>
+                    <p>Our Sports Clubs offer students the opportunity to develop athletic skills, teamwork, and sportsmanship across a variety of disciplines.</p>
+                </div>
+            </div>
+        </section>
+        <!-- ===== PLACEMENTS SECTION ===== -->
+<section class="logo-section placements-section" id="placementsContainer">
+            <h2 id="placementsTitle">Our Recruiters</h2>
+
+        <p id="placementsSubtitle">Our students are placed in top national and multinational companies.</p>
+
+<div class="company-logos" id="placementsGrid">
+    <div class="logo-card"><img src="./images/company-logos/tcs.png" alt="TCS"></div>
+    <div class="logo-card"><img src="./images/company-logos/wipro.jpeg" alt="Wipro"></div>
+    <div class="logo-card"><img src="./images/company-logos/google.jpeg" alt="Google"></div>
+    <div class="logo-card"><img src="./images/company-logos/gemini.png" alt="Gemini"></div>
+    <div class="logo-card"><img src="./images/company-logos/infosys.png" alt="Infosys"></div>
+    <div class="logo-card"><img src="./images/company-logos/accenture.png" alt="Accenture"></div>
+    <div class="logo-card"><img src="./images/company-logos/ibm.png" alt="IBM"></div>
+    <div class="logo-card"><img src="./images/company-logos/capgemini.png" alt="Capgemini"></div>
+    <div class="logo-card"><img src="./images/company-logos/cognizant.png" alt="Cognizant"></div>
+    <div class="logo-card"><img src="./images/company-logos/amazon.png" alt="Amazon"></div>
+    <div class="logo-card"><img src="./images/company-logos/microsoft.png" alt="Microsoft"></div>
+    <div class="logo-card"><img src="./images/company-logos/hcl.png" alt="HCL"></div>
+</div>
+</section>
+
+</section>
+
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="site-footer">
+
+            <div class="footer-container">
+
+                <div class="footer-box">
+                    <h3>College Website</h3>
+                    <p>
+                        Empowering students with quality education,
+                        modern facilities, and holistic development.
+                    </p>
+                </div>
+
+                <div class="footer-box">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="faculty.html">Faculty</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-box">
+                    <h3>More</h3>
+                    <ul>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="fees.html">Fees</a></li>
+                        <li><a href="admission.html">Admission</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="event.html">Events</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-box">
+                    <h3>Contact</h3>
+                    <p>Email: info@collegewebsite.com</p>
+                    <p>Phone: +91 98765 43210</p>
+                    <p>Maharashtra, India</p>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 College Website | All Rights Reserved</p>
+                <a href="#top" class="back-top">↑ Back to Top</a>
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

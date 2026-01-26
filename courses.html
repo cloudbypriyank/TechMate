@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Courses</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="./images/fav.jfif">
+</head>
+
+<body id="top">
+
+  <!-- ===== HEADER ===== -->
+  <header id="siteHeader">
+    <div class="header-left">
+      <img id="collegeLogo" class="logo">
+      <span id="headerCollegeName"></span>
+    </div>
+
+    <nav class="header-right">
+      <a href="index.html">Home</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="faq.html">FAQs</a>
+      <a href="faculty.html">Faculty</a>
+      <a href="academics.html">Academics</a>
+      <a href="contact.html">Contact us</a>
+      <a href="event.html">Event</a>
+      <a href="courses.html">Courses</a>
+      <a href="admission.html">Admission</a>
+      <a href="fees.html">Fees</a>
+    </nav>
+  </header>
+
+  <!-- ===== COURSES SECTION ===== -->
+  <section class="academic-section">
+    <h1>Courses Offered</h1>
+
+    <div class="course-list">
+
+      <!-- BSC IT -->
+      <div class="course-card" onclick="selectCourse('bscit')">
+        <div class="course-header">
+          <h3>B.Sc Information Technology</h3>
+          <span>▼</span>
+        </div>
+      </div>
+
+      <!-- BCOM -->
+      <div class="course-card" onclick="selectCourse('bcom')">
+        <div class="course-header">
+          <h3>Bachelor of Commerce (B.Com)</h3>
+          <span>▼</span>
+        </div>
+      </div>
+
+      <!-- BMS -->
+      <div class="course-card" onclick="selectCourse('bms')">
+        <div class="course-header">
+          <h3>Bachelor of Management Studies (BMS)</h3>
+          <span>▼</span>
+        </div>
+      </div>
+
+      <!-- BA -->
+      <div class="course-card" onclick="selectCourse('ba')">
+        <div class="course-header">
+          <h3>Bachelor of Arts (BA)</h3>
+          <span>▼</span>
+        </div>
+      </div>
+
+      <!-- JC Science -->
+      <div class="course-card" onclick="selectCourse('jc-science')">
+        <div class="course-header">
+          <h3>Junior College – Science</h3>
+          <span>▼</span>
+        </div>
+      </div>
+
+      <!-- JC Commerce -->
+      <div class="course-card" onclick="selectCourse('jc-commerce')">
+        <div class="course-header">
+          <h3>Junior College – Commerce</h3>
+          <span>▼</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const logo = localStorage.getItem("collegeLogo");
+        const name = localStorage.getItem("collegeName");
+        const headerColor = localStorage.getItem("collegeHeaderColor");
+
+        if (logo) document.getElementById("collegeLogo").src = logo;
+        if (name) document.getElementById("headerCollegeName").innerText = name;
+        if (headerColor) document.getElementById("siteHeader").style.backgroundColor = headerColor;
+    });
+</script>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+
+      <div class="footer-box">
+        <h3>College Website</h3>
+        <p>Empowering students with quality education and holistic development.</p>
+      </div>
+
+      <div class="footer-box">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-box">
+        <h3>More</h3>
+        <ul>
+          <li><a href="fees.html">Fees</a></li>
+          <li><a href="admission.html">Admission</a></li>
+          <li><a href="event.html">Events</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-box">
+        <h3>Contact</h3>
+        <p>Email: info@collegewebsite.com</p>
+        <p>Phone: +91 98765 43210</p>
+        <p>Maharashtra, India</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 College Website</p>
+      <a href="#top" class="back-top">↑ Back to Top</a>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    function selectCourse(courseKey) {
+
+      const coursePages = {
+        "bscit": "courses/bscit.html",
+        "bcom": "courses/bcom.html",
+        "bms": "courses/bms.html",
+        "ba": "courses/ba.html",
+        "jc-science": "courses/jc-science.html",
+        "jc-commerce": "courses/jc-commerce.html"
+      };
+
+      if (coursePages[courseKey]) {
+        window.location.href = coursePages[courseKey];
+      } else {
+        alert("Course page not found!");
+      }
+    }
+  </script>
+
+</body>
+</html>

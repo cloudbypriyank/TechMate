@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Junior College – Science</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body id="top">
+
+    <!-- ===== HEADER ===== -->
+    <header id="siteHeader">
+        <div class="header-left">
+            <img id="collegeLogo" class="logo">
+            <span id="headerCollegeName"></span>
+        </div>
+
+        <nav class="header-right">
+            <a href="../index.html">Home</a>
+            <a href="../reviews.html">Reviews</a>
+            <a href="../faq.html">FAQs</a>
+            <a href="../faculty.html">Faculty</a>
+            <a href="../academics.html">Academics</a>
+            <a href="../contact.html">Contact</a>
+            <a href="../event.html">Event</a>
+            <a href="../courses.html">Courses</a>
+            <a href="../admission.html">Admission</a>
+            <a href="../fees.html">Fees</a>
+        </nav>
+    </header>
+
+    <!-- ===== COURSE HERO ===== -->
+    <header class="course-header-page">
+        <h1>Junior College – Science</h1>
+        <p>Higher Secondary • 2 Years • Full Time</p>
+    </header>
+
+    <!-- ===== COURSE CONTENT ===== -->
+    <section class="course-details-page">
+
+        <!-- QUICK FACTS -->
+        <div class="course-facts">
+            <div class="fact-card">🎓 Level<br><strong>HSC (11th–12th)</strong></div>
+            <div class="fact-card">⏱ Duration<br><strong>2 Years</strong></div>
+            <div class="fact-card">📘 Stream<br><strong>Science</strong></div>
+            <div class="fact-card">🚀 Scope<br><strong>High</strong></div>
+        </div>
+
+        <!-- OVERVIEW -->
+        <h2>Course Overview</h2>
+        <p>
+            Junior College – Science is a two-year higher secondary program (11th & 12th)
+            designed for students interested in science, technology, medicine, and
+            engineering. The course builds strong fundamentals in Physics, Chemistry,
+            Mathematics, Biology, and Information Technology.
+        </p>
+
+        <!-- ELIGIBILITY -->
+        <h2>Eligibility Criteria</h2>
+        <ul>
+            <li>Passed 10th (SSC or equivalent)</li>
+            <li>Minimum percentage as per college & board norms</li>
+            <li>Science & Mathematics required at SSC level</li>
+        </ul>
+
+        <!-- SUBJECTS -->
+        <h2>Subjects Offered</h2>
+        <ul class="skill-list">
+            <li>Physics</li>
+            <li>Chemistry</li>
+            <li>Mathematics / Biology</li>
+            <li>Information Technology</li>
+            <li>English</li>
+        </ul>
+
+        <!-- SYLLABUS -->
+        <h2>Year-wise Syllabus (Overview)</h2>
+        <div class="syllabus-grid">
+            <div>
+                <h4>11th Standard</h4>
+                <ul>
+                    <li>Basic Physics & Laws of Motion</li>
+                    <li>Fundamentals of Chemistry</li>
+                    <li>Algebra & Trigonometry</li>
+                </ul>
+            </div>
+            <div>
+                <h4>12th Standard</h4>
+                <ul>
+                    <li>Advanced Physics & Electronics</li>
+                    <li>Organic & Inorganic Chemistry</li>
+                    <li>Calculus / Biology</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CAREER -->
+        <h2>Career & Education Pathways</h2>
+        <ul>
+            <li>Engineering (BE / BTech)</li>
+            <li>Medical (MBBS / BDS / BAMS)</li>
+            <li>Pure Sciences (B.Sc)</li>
+            <li>Information Technology & Computer Science</li>
+            <li>Architecture & Applied Sciences</li>
+        </ul>
+
+        <!-- EXAMS -->
+        <h2>Competitive Exams Preparation</h2>
+        <p>
+            JEE (Main/Advanced), NEET, CET, NDA, and other
+            state & national level entrance examinations.
+        </p>
+
+        <!-- WHY CHOOSE -->
+        <h2>Why Choose Science Stream?</h2>
+        <ul>
+            <li>Wide range of career opportunities</li>
+            <li>Strong foundation for technical & medical fields</li>
+            <li>High academic & professional growth</li>
+            <li>Best choice for innovation & research careers</li>
+        </ul>
+
+        <!-- CTA -->
+        <div class="course-cta">
+            <h2>Begin Your Journey in Science & Innovation</h2>
+            <a class="apply-btn" href="../admission.html">Apply for Admission</a>
+        </div>
+
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <div class="footer-box">
+                <h3>College Website</h3>
+                <p>Empowering students with quality education and holistic development.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../reviews.html">Reviews</a></li>
+                    <li><a href="../faq.html">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>More</h3>
+                <ul>
+                    <li><a href="../courses.html">Courses</a></li>
+                    <li><a href="../fees.html">Fees</a></li>
+                    <li><a href="../admission.html">Admission</a></li>
+                    <li><a href="../event.html">Events</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p>Email: info@collegewebsite.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Maharashtra, India</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 College Website</p>
+            <a href="#top" class="back-top">↑ Back to Top</a>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPT ===== -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const logo = localStorage.getItem("collegeLogo");
+            const name = localStorage.getItem("collegeName");
+            const headerColor = localStorage.getItem("collegeHeaderColor");
+
+            if (logo) document.getElementById("collegeLogo").src = logo;
+            if (name) document.getElementById("headerCollegeName").innerText = name;
+            if (headerColor) document.getElementById("siteHeader").style.backgroundColor = headerColor;
+        });
+    </script>
+
+</body>
+</html>

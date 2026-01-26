@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Junior College – Commerce</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body id="top">
+
+    <!-- ===== HEADER ===== -->
+    <header id="siteHeader">
+        <div class="header-left">
+            <img id="collegeLogo" class="logo">
+            <span id="headerCollegeName"></span>
+        </div>
+
+        <nav class="header-right">
+            <a href="../index.html">Home</a>
+            <a href="../reviews.html">Reviews</a>
+            <a href="../faq.html">FAQs</a>
+            <a href="../faculty.html">Faculty</a>
+            <a href="../academics.html">Academics</a>
+            <a href="../contact.html">Contact</a>
+            <a href="../event.html">Event</a>
+            <a href="../courses.html">Courses</a>
+            <a href="../admission.html">Admission</a>
+            <a href="../fees.html">Fees</a>
+        </nav>
+    </header>
+
+    <!-- ===== COURSE HERO ===== -->
+    <header class="course-header-page">
+        <h1>Junior College – Commerce</h1>
+        <p>Higher Secondary • 2 Years • Full Time</p>
+    </header>
+
+    <!-- ===== COURSE CONTENT ===== -->
+    <section class="course-details-page">
+
+        <!-- QUICK FACTS -->
+        <div class="course-facts">
+            <div class="fact-card">🎓 Level<br><strong>HSC (11th–12th)</strong></div>
+            <div class="fact-card">⏱ Duration<br><strong>2 Years</strong></div>
+            <div class="fact-card">📘 Stream<br><strong>Commerce</strong></div>
+            <div class="fact-card">💼 Scope<br><strong>Finance & Business</strong></div>
+        </div>
+
+        <!-- OVERVIEW -->
+        <h2>Course Overview</h2>
+        <p>
+            Junior College – Commerce is a two-year higher secondary program (11th & 12th)
+            designed for students interested in business, finance, accounting, and
+            economics. The course provides a strong foundation for careers in commerce,
+            management, banking, and professional courses.
+        </p>
+
+        <!-- ELIGIBILITY -->
+        <h2>Eligibility Criteria</h2>
+        <ul>
+            <li>Passed 10th (SSC or equivalent)</li>
+            <li>Minimum percentage as per college & board norms</li>
+            <li>Basic knowledge of Mathematics preferred</li>
+        </ul>
+
+        <!-- SUBJECTS -->
+        <h2>Subjects Offered</h2>
+        <ul class="skill-list">
+            <li>Accountancy</li>
+            <li>Economics</li>
+            <li>Business Studies (Organization of Commerce)</li>
+            <li>Mathematics</li>
+            <li>English</li>
+        </ul>
+
+        <!-- SYLLABUS -->
+        <h2>Year-wise Syllabus (Overview)</h2>
+        <div class="syllabus-grid">
+            <div>
+                <h4>11th Standard</h4>
+                <ul>
+                    <li>Introduction to Accountancy</li>
+                    <li>Micro Economics</li>
+                    <li>Business Organization</li>
+                </ul>
+            </div>
+            <div>
+                <h4>12th Standard</h4>
+                <ul>
+                    <li>Final Accounts</li>
+                    <li>Macro Economics</li>
+                    <li>Business Environment</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CAREER -->
+        <h2>Career & Education Pathways</h2>
+        <ul>
+            <li>B.Com / BMS / BAF / BBI</li>
+            <li>Chartered Accountant (CA)</li>
+            <li>Company Secretary (CS)</li>
+            <li>Cost & Management Accountant (CMA)</li>
+            <li>Banking & Financial Services</li>
+        </ul>
+
+        <!-- WHY CHOOSE -->
+        <h2>Why Choose Commerce Stream?</h2>
+        <ul>
+            <li>Strong base for finance & accounting careers</li>
+            <li>Gateway to professional courses</li>
+            <li>High demand in corporate & banking sectors</li>
+            <li>Excellent career growth opportunities</li>
+        </ul>
+
+        <!-- CTA -->
+        <div class="course-cta">
+            <h2>Step Into the World of Business & Finance</h2>
+            <a class="apply-btn" href="../admission.html">Apply for Admission</a>
+        </div>
+
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <div class="footer-box">
+                <h3>College Website</h3>
+                <p>Empowering students with quality education and holistic development.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../reviews.html">Reviews</a></li>
+                    <li><a href="../faq.html">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>More</h3>
+                <ul>
+                    <li><a href="../courses.html">Courses</a></li>
+                    <li><a href="../fees.html">Fees</a></li>
+                    <li><a href="../admission.html">Admission</a></li>
+                    <li><a href="../event.html">Events</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p>Email: info@collegewebsite.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Maharashtra, India</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 College Website</p>
+            <a href="#top" class="back-top">↑ Back to Top</a>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPT ===== -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const logo = localStorage.getItem("collegeLogo");
+            const name = localStorage.getItem("collegeName");
+            const headerColor = localStorage.getItem("collegeHeaderColor");
+
+            if (logo) document.getElementById("collegeLogo").src = logo;
+            if (name) document.getElementById("headerCollegeName").innerText = name;
+            if (headerColor) document.getElementById("siteHeader").style.backgroundColor = headerColor;
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Academics</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./images/fav.jfif">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header id="siteHeader">
+        <div class="header-left">
+            <img id="collegeLogo" class="logo">
+            <span id="headerCollegeName"></span>
+        </div>
+
+
+        <nav class="header-right">
+            <a href="./index.html">Home</a>
+            <a href="./reviews.html">Reviews</a>
+            <a href="./faq.html">FAQs</a>
+            <a href="./faculty.html">Faculty</a>
+            <a href="./academics.html">Academics</a>
+            <a href="./contact.html">Contact us</a>
+            <a href="./event.html">Event </a>
+            <a href="./courses.html">Courses</a>
+            <a href="./admission.html">Admission</a>
+            <a href="./fees.html">Fees</a>
+        </nav>
+    </header>
+
+
+
+
+
+    <!-- ===== FACULTY SECTION ===== -->
+    <section id="faculty">
+
+        <div class="faculty-header">
+            <h1>OUR ESTEEMED TEACHING FACULTY</h1>
+            <p>Meet our dedicated faculty members who shape the future of our students.</p>
+        </div>
+
+        <h2 class="faculty-subtitle">Teaching Faculty</h2>
+
+        <div class="faculty-table-wrapper">
+            <table class="faculty-table">
+                <thead>
+                    <tr>
+                        <th>SR. NO.</th>
+                        <th>FACULTY NAME</th>
+                        <th>SUBJECT</th>
+                        <th>DESIGNATION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Ms. Nilam Jnardan Patil</td>
+                        <td>Principal</td>
+                        <td>(M.A., D.Ed, B.Ed)</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Mrs. Nikita Suraj Bhoir</td>
+                        <td>Asst. Teacher</td>
+                        <td>(B.Com, D.Ed)</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Ms. Yogita Pandurang Joshi</td>
+                        <td>Science</td>
+                        <td>Asst. Teacher (B.Sc, B.Ed)</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Ms. Sonam Anil Bhoir</td>
+                        <td>Marathi</td>
+                        <td>Asst. Teacher (B.A, B.Ed)</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Mrs. Purnima Manoj Bhoir</td>
+                        <td>Hindi</td>
+                        <td>Asst. Teacher (M.A, B.Ed)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+
+
+    <!-- ===== REQUIRED SCRIPT ===== -->
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const logo = localStorage.getItem("collegeLogo");
+            const name = localStorage.getItem("collegeName");
+            const headerColor = localStorage.getItem("collegeHeaderColor");
+
+            if (logo) document.getElementById("collegeLogo").src = logo;
+            if (name) document.getElementById("headerCollegeName").innerText = name;
+            if (headerColor) document.getElementById("siteHeader").style.backgroundColor = headerColor;
+
+            // default load
+            loadAcademics('pre');
+        });
+    </script>
+
+
+
+
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <!-- COLLEGE INFO -->
+            <div class="footer-box">
+                <h3>College Website</h3>
+                <p>
+                    Empowering students with quality education, modern facilities,
+                    and holistic development.
+                </p>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="./faq.html">FAQs</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                </ul>
+            </div>
+
+            <!-- MORE LINKS -->
+            <div class="footer-box">
+                <h3>More</h3>
+                <ul>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="fees.html">Fees</a></li>
+                    <li><a href="admission.html">Admission</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="event.html">Events</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p>Email: info@collegewebsite.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Maharashtra, India</p>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom">
+            <p>© 2025 College Website | All Rights Reserved</p>
+            <a href="#top" class="back-top">↑ Back to Top</a>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

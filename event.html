@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Events - College Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./images/fav.jfif">
+</head>
+
+<body id="top">
+
+    <!-- ========== SAME HEADER AS INDEX ========== -->
+    <header id="siteHeader">
+        <div class="header-left">
+            <img id="collegeLogo" class="logo">
+            <span id="headerCollegeName"></span>
+        </div>
+
+
+        <nav class="header-right">
+            <a href="./index.html">Home</a>
+            <a href="./reviews.html">Reviews</a>
+            <a href="./faq.html">FAQs</a>
+            <a href="./faculty.html">Faculty</a>
+            <a href="./academics.html">Academics</a>
+            <a href="./contact.html">Contact us</a>
+            <a href="./event.html">Event </a>
+            <a href="./courses.html">Courses</a>
+            <a href="./admission.html">Admission</a>
+            <a href="./fees.html">Fees</a>
+        </nav>
+    </header>
+
+    <!-- ========== EVENTS SECTION ========== -->
+    <section id="events">
+
+        <h2>College Events</h2>
+
+        <div class="events-grid">
+
+            <!-- Independence Day -->
+
+            <div class="event-card">
+                <h2>Independence Day</h2>
+                <div class="event-images"> </div>
+                <img src="./images/ind/1.jpeg" alt="Independence Day">
+                <img src="./images/ind/2.jpeg">
+                <img src="./images/ind/3.jpeg">
+            </div>
+
+            <!-- Shiv Jayanti -->
+            <div class="event-card">
+                <h2>shiv Jayanti</h2>
+                <img src="./images/shiv/1.jpeg" alt="Shiv Jayanti">
+                <img src="./images/shiv/2.jpeg" alt="Independence Day">
+                <img src="./images/shiv/3.jpeg">
+
+            </div>
+
+            <!-- Yoga Day -->
+            <div class="event-card">
+                <h2>International Yoga Day</h2>
+                <img src="./images/yoga/2.jpeg" alt="Yoga Day">
+                <img src="./images/yoga/3.jpeg">
+                <img src="./images/yoga/4.jpeg">
+
+            </div>
+
+            <!-- Extra Event
+        <div class="event-card">
+            <img src="./images/" alt="Annual Day">
+            <h3>Annual Day</h3>
+        </div> -->
+
+        </div>
+
+    </section>
+
+   <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h3>College Website</h3>
+                <p>Empowering students with quality education and holistic development.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>More</h3>
+                <ul>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="fees.html">Fees</a></li>
+                    <li><a href="admission.html">Admission</a></li>
+                    <li><a href="event.html">Events</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p>Email: info@collegewebsite.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Maharashtra, India</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 College Website</p>
+            <a href="#top" class="back-top">↑ Back to Top</a>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPT ===== -->
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const logo = localStorage.getItem("collegeLogo");
+            const name = localStorage.getItem("collegeName");
+            const headerColor = localStorage.getItem("collegeHeaderColor");
+            const collegeKey = localStorage.getItem("collegeKey");
+
+            if (logo) document.getElementById("collegeLogo").src = logo;
+            if (name) document.getElementById("headerCollegeName").innerText = name;
+            if (headerColor) document.getElementById("siteHeader").style.backgroundColor = headerColor;
+
+            if (collegeKey) {
+                loadReviews(collegeKey);
+            } else {
+                document.getElementById("reviewContainer").innerHTML =
+                    "<p style='text-align:center'>Please select a college first.</p>";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
+    <!-- ========== APPLY HEADER THEME FROM LOCALSTORAGE ========== -->
+    <script src="script.js"></script>
+
+    <script>
+        const logo = localStorage.getItem("collegeLogo");
+        const name = localStorage.getItem("collegeName");
+        const headerColor = localStorage.getItem("collegeHeaderColor");
+
+        if (logo) document.getElementById("collegeLogo").src = logo;
+        if (name) document.getElementById("headerCollegeName").innerText = name;
+        if (headerColor) document.getElementById("siteHeader").style.backgroundColor = headerColor;
+    </script>
+
+</body>
+
+</html>

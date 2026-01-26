@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Academics</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./images/fav.jfif">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header id="siteHeader">
+        <div class="header-left">
+            <img id="collegeLogo" class="logo">
+            <span id="headerCollegeName"></span>
+        </div>
+
+        <nav class="header-right">
+            <a href="./index.html">Home</a>
+            <a href="./reviews.html">Reviews</a>
+            <a href="./faq.html">FAQs</a>
+            <a href="./faculty.html">Faculty</a>
+            <a href="./academics.html">Academics</a>
+            <a href="./contact.html">Contact us</a>
+            <a href="./event.html">Event </a>
+            <a href="./courses.html">Courses</a>
+            <a href="./admission.html">Admission</a>
+            <a href="./fees.html">Fees</a>
+        </nav>
+    </header>
+
+    <!-- ===== DROPDOWN ===== -->
+    <div style="text-align:center; margin-top:30px;">
+        <div class="dropdown">
+            <a class="dropbtn">Academics ▾</a>
+            <div class="dropdown-content">
+                <a onclick="loadAcademics('pre')">Pre-Primary</a>
+                <a onclick="loadAcademics('primary')">Primary</a>
+                <a onclick="loadAcademics('upper')">Upper Primary</a>
+                <a onclick="loadAcademics('secondary')">Secondary</a>
+                <a onclick="loadAcademics('junior')">Junior College</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ACADEMICS CONTENT ===== -->
+    <section id="academics" class="academic-section">
+        <h1 id="academicTitle">Pre-Primary (Nursery / Jr.Kg / Sr.Kg)</h1>
+
+        <div class="academic-box">
+            <p id="academicDesc">
+                The academic year starts from June till April.
+                The academic session starts in June and finishes in April.
+            </p>
+
+            <strong id="academicTime">
+                School Timing: 08:30 AM to 11:30 AM
+            </strong>
+        </div>
+
+        <h2>Understanding Education</h2>
+
+        <div class="academic-cards">
+            <div class="card">
+                <h3>SALIENT FEATURES</h3>
+                <ul id="featureList"></ul>
+            </div>
+
+            <div class="card">
+                <h3>BASIC FACILITIES</h3>
+                <ul id="facilityList"></ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== REQUIRED SCRIPT ===== -->
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const logo = localStorage.getItem("collegeLogo");
+            const name = localStorage.getItem("collegeName");
+            const headerColor = localStorage.getItem("collegeHeaderColor");
+
+            if (logo) document.getElementById("collegeLogo").src = logo;
+            if (name) document.getElementById("headerCollegeName").innerText = name;
+            if (headerColor) document.getElementById("siteHeader").style.backgroundColor = headerColor;
+
+            // default load
+            loadAcademics('pre');
+        });
+    </script>
+
+
+
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <!-- COLLEGE INFO -->
+            <div class="footer-box">
+                <h3>College Website</h3>
+                <p>
+                    Empowering students with quality education, modern facilities,
+                    and holistic development.
+                </p>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="./faq.html">FAQs</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                </ul>
+            </div>
+
+            <!-- MORE LINKS -->
+            <div class="footer-box">
+                <h3>More</h3>
+                <ul>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="fees.html">Fees</a></li>
+                    <li><a href="admission.html">Admission</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="event.html">Events</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p>Email: info@collegewebsite.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Maharashtra, India</p>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom">
+            <p>© 2025 College Website | All Rights Reserved</p>
+            <a href="#top" class="back-top">↑ Back to Top</a>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

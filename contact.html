@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - College Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./images/fav.jfif">
+</head>
+
+<body id="top">
+
+    <!-- ========== SAME HEADER AS INDEX ========== -->
+    <header id="siteHeader">
+        <div class="header-left">
+            <img id="collegeLogo" class="logo">
+            <span id="headerCollegeName"></span>
+        </div>
+
+
+        <nav class="header-right">
+            <a href="./index.html">Home</a>
+            <a href="./reviews.html">Reviews</a>
+            <a href="./faq.html">FAQs</a>
+            <a href="./faculty.html">Faculty</a>
+            <a href="./academics.html">Academics</a>
+            <a href="./contact.html">Contact us</a>
+            <a href="./event.html">Event </a>
+            <a href="./courses.html">Courses</a>
+            <a href="./admission.html">Admission</a>
+            <a href="./fees.html">Fees</a>
+        </nav>
+    </header>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contact">
+
+        <h2>Contact Us</h2>
+
+        <div class="contact-container">
+
+            <!-- LEFT : INFO -->
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+
+                <p>
+                    <strong>College Name:</strong>
+                    <span id="contactCollegeName"></span>
+                </p>
+
+                <p>
+                    <strong>Address:</strong>
+                    Dombivli East, Thane, Maharashtra, India
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    info@madhvicollageind.netlify.app
+                </p>
+
+                <p>
+                    <strong>Phone:</strong>
+                    +91 98765 43210
+                </p>
+            </div>
+
+            <!-- RIGHT : FORM -->
+            <form class="contact-form" onsubmit="return false;">
+                <h3>Send Us a Message</h3>
+
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+
+
+
+
+        </div>
+
+
+
+    </section>
+
+
+
+   <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h3>College Website</h3>
+                <p>Empowering students with quality education and holistic development.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>More</h3>
+                <ul>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="fees.html">Fees</a></li>
+                    <li><a href="admission.html">Admission</a></li>
+                    <li><a href="event.html">Events</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p>Email: info@collegewebsite.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Maharashtra, India</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 College Website</p>
+            <a href="#top" class="back-top">↑ Back to Top</a>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPT ===== -->
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const logo = localStorage.getItem("collegeLogo");
+            const name = localStorage.getItem("collegeName");
+            const headerColor = localStorage.getItem("collegeHeaderColor");
+            const collegeKey = localStorage.getItem("collegeKey");
+
+            if (logo) document.getElementById("collegeLogo").src = logo;
+            if (name) document.getElementById("headerCollegeName").innerText = name;
+            if (headerColor) document.getElementById("siteHeader").style.backgroundColor = headerColor;
+
+            if (collegeKey) {
+                loadReviews(collegeKey);
+            } else {
+                document.getElementById("reviewContainer").innerHTML =
+                    "<p style='text-align:center'>Please select a college first.</p>";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
+
+    <!-- ========== APPLY HEADER DATA FROM LOCALSTORAGE ========== -->
+    <script src="script.js"></script>
+
+    <script>
+        const logo = localStorage.getItem("collegeLogo");
+        const name = localStorage.getItem("collegeName");
+        const headerColor = localStorage.getItem("collegeHeaderColor");
+
+        if (logo) {
+            document.getElementById("collegeLogo").src = logo;
+        }
+
+        if (name) {
+            document.getElementById("headerCollegeName").innerText = name;
+            document.getElementById("contactCollegeName").innerText = name;
+        }
+
+        if (headerColor) {
+            document.getElementById("siteHeader").style.backgroundColor = headerColor;
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

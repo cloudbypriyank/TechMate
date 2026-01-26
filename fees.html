@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fees - College Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./images/fav.jfif">
+    <style>
+        .fees-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .fees-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .course-selector {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .course-selector select {
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            width: 100%;
+            max-width: 400px;
+            cursor: pointer;
+        }
+
+        .fee-details-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .fee-details-table th, .fee-details-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        .fee-details-table th {
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .total-row {
+            font-weight: bold;
+            background-color: #f1f5f9;
+        }
+
+        .paragraph-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .paragraph-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <!-- ===== HEADER ===== -->
+    <header id="siteHeader">
+        <div class="header-left">
+            <img id="collegeLogo" class="logo">
+            <span id="headerCollegeName"></span>
+        </div>
+
+        <nav class="header-right">
+            <a href="index.html">Home</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="faq.html">FAQs</a>
+            <a href="faculty.html">Faculty</a>
+            <a href="./academics.html">Academics</a>
+            <a href="courses.html">Courses</a>
+            <a href="fees.html">Fees</a>
+            <a href="admission.html">Admission</a>
+            <a href="contact.html">Contact</a>
+            <a href="event.html">Event</a>
+        </nav>
+    </header>
+
+    <!-- ===== CONTENT ===== -->
+    <section class="academic-section">
+        <div class="fees-container">
+            <div class="fees-header">
+                <h1>Detailed Fee Structure</h1>
+                <p>Select your course below to see the complete fee breakdown.</p>
+            </div>
+
+            <div class="course-selector">
+                <select id="course-select" onchange="showFees(this.value)">
+                    <option value="">-- Choose a Course --</option>
+                    <option value="xi">Std. XI (Science/Commerce)</option>
+                    <option value="xii">Std. XII (Science/Commerce)</option>
+                    <option value="bcom">B.Com</option>
+                    <option value="bms">BMS</option>
+                    <option value="bscit">B.Sc. IT</option>
+                    <option value="ba">B.A.</option>
+                    <option value="mscit">M.Sc. IT</option>
+                    <option value="mcom">M.Com</option>
+                </select>
+            </div>
+
+            <div id="fee-info">
+                <!-- Std XI -->
+                <div id="xi" class="paragraph-content">
+                    <table class="fee-details-table">
+                        <thead>
+                            <tr><th>Particulars</th><th>Amount (₹)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Admission Fee</td><td>1,000</td></tr>
+                            <tr><td>Tuition Fee</td><td>12,000</td></tr>
+                            <tr><td>Laboratory Fee</td><td>2,000</td></tr>
+                            <tr><td>Library Fee</td><td>500</td></tr>
+                            <tr class="total-row"><td>Total Annual Fees</td><td>15,500</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Std XII -->
+                <div id="xii" class="paragraph-content">
+                    <table class="fee-details-table">
+                        <thead>
+                            <tr><th>Particulars</th><th>Amount (₹)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Admission Fee</td><td>1,000</td></tr>
+                            <tr><td>Tuition Fee</td><td>14,000</td></tr>
+                            <tr><td>Laboratory Fee</td><td>2,500</td></tr>
+                            <tr><td>Library Fee</td><td>500</td></tr>
+                            <tr class="total-row"><td>Total Annual Fees</td><td>18,000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- B.Com -->
+                <div id="bcom" class="paragraph-content">
+                    <table class="fee-details-table">
+                        <thead>
+                            <tr><th>Particulars</th><th>Amount (₹)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Admission Fee</td><td>2,000</td></tr>
+                            <tr><td>Tuition Fee</td><td>18,000</td></tr>
+                            <tr><td>Exam Fee</td><td>3,000</td></tr>
+                            <tr><td>Other Activities</td><td>2,000</td></tr>
+                            <tr class="total-row"><td>Total Annual Fees</td><td>25,000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- BMS -->
+                <div id="bms" class="paragraph-content">
+                    <table class="fee-details-table">
+                        <thead>
+                            <tr><th>Particulars</th><th>Amount (₹)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Admission Fee</td><td>5,000</td></tr>
+                            <tr><td>Tuition Fee</td><td>20,000</td></tr>
+                            <tr><td>Specialized Training</td><td>3,000</td></tr>
+                            <tr><td>Placement Cell</td><td>2,000</td></tr>
+                            <tr class="total-row"><td>Total Annual Fees</td><td>30,000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- BSc IT -->
+                <div id="bscit" class="paragraph-content">
+                    <table class="fee-details-table">
+                        <thead>
+                            <tr><th>Particulars</th><th>Amount (₹)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Admission Fee</td><td>5,000</td></tr>
+                            <tr><td>Tuition Fee</td><td>25,000</td></tr>
+                            <tr><td>Lab & Infrastructure</td><td>4,000</td></tr>
+                            <tr><td>Project Guidance</td><td>1,000</td></tr>
+                            <tr class="total-row"><td>Total Annual Fees</td><td>35,000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- BA -->
+                <div id="ba" class="paragraph-content">
+                    <table class="fee-details-table">
+                        <thead>
+                            <tr><th>Particulars</th><th>Amount (₹)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Admission Fee</td><td>1,500</td></tr>
+                            <tr><td>Tuition Fee</td><td>15,000</td></tr>
+                            <tr><td>Library Fee</td><td>1,500</td></tr>
+                            <tr><td>Cultural Activities</td><td>2,000</td></tr>
+                            <tr class="total-row"><td>Total Annual Fees</td><td>20,000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <
+                <!-- M.Sc. IT -->
+                <div id="mscit" class="paragraph-content">
+                    <table class="fee-details-table">
+                        <thead>
+                            <tr><th>Particulars</th><th>Amount (₹)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Admission Fee</td><td>5,000</td></tr>
+                            <tr><td>Tuition Fee</td><td>25,000</td></tr>
+                            <tr><td>Lab & Infrastructure</td><td>4,000</td></tr>
+                            <tr><td>Project Guidance</td><td>1,000</td></tr>
+                            <tr class="total-row"><td>Total Annual Fees</td><td>35,000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- M.Com -->
+                <div id="mcom" class="paragraph-content">
+                    <table class="fee-details-table">
+                        <thead>
+                            <tr><th>Particulars</th><th>Amount (₹)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Admission Fee</td><td>5,000</td></tr>
+                            <tr><td>Tuition Fee</td><td>25,000</td></tr>
+                            <tr><td>Lab & Infrastructure</td><td>4,000</td></tr>
+                            <tr><td>Project Guidance</td><td>1,000</td></tr>
+                            <tr class="total-row"><td>Total Annual Fees</td><td>35,000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- M.A. -->
+                <div id="ma" class="paragraph-content">
+                    <table class="fee-details-table">
+                        <thead>
+                            <tr><th>Particulars</th><th>Amount (₹)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Admission Fee</td><td>5,000</td></tr>
+                            <tr><td>Tuition Fee</td><td>25,000</td></tr>
+                            <tr><td>Lab & Infrastructure</td><td>4,000</td></tr>
+                            <tr><td>Project Guidance</td><td>1,000</td></tr>
+                            <tr class="total-row"><td>Total Annual Fees</td><td>35,000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- M.B.A. -->
+                <div id="mba" class="paragraph-content">
+                    <table class="fee-details-table">
+                        <thead>
+                            <tr><th>Particulars</th><th>Amount (₹)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Admission Fee</td><td>5,000</td></tr>
+                            <tr><td>Tuition Fee</td><td>25,000</td></tr>
+                            <tr><td>Lab & Infrastructure</td><td>4,000</td></tr>
+                            <tr><td>Project Guidance</td><td>1,000</td></tr>
+                            <tr class="total-row"><td>Total Annual Fees</td><td>35,000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p id="placeholder-text" style="text-align: center; color: #64748b; margin-top: 20px;">
+                    Please select a course to view detailed fees.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h3>College Website</h3>
+                <p>Empowering students with quality education, modern facilities, and holistic development.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="./faq.html">FAQs</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>More</h3>
+                <ul>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="fees.html">Fees</a></li>
+                    <li><a href="admission.html">Admission</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="event.html">Events</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p>Email: info@collegewebsite.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Maharashtra, India</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 College Website | All Rights Reserved</p>
+            <a href="#top" class="back-top">↑ Back to Top</a>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="script.js"></script>
+    <script>
+        function showFees(courseId) {
+            // Hide all contents
+            const contents = document.querySelectorAll('.paragraph-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            const placeholder = document.getElementById('placeholder-text');
+            
+            if (courseId) {
+                const activeContent = document.getElementById(courseId);
+                if (activeContent) {
+                    activeContent.classList.add('active');
+                    placeholder.style.display = 'none';
+                }
+            } else {
+                placeholder.style.display = 'block';
+            }
+        }
+
+        // Apply shared header data
+        document.addEventListener("DOMContentLoaded", function () {
+            const logo = localStorage.getItem("collegeLogo");
+            const name = localStorage.getItem("collegeName");
+            const headerColor = localStorage.getItem("collegeHeaderColor");
+
+            if (logo) document.getElementById("collegeLogo").src = logo;
+            if (name) document.getElementById("headerCollegeName").innerText = name;
+            if (headerColor) document.getElementById("siteHeader").style.backgroundColor = headerColor;
+        });
+    </script>
+</body>
+
+</html>

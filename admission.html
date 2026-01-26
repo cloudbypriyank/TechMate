@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admission</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./images/fav.jfif">
+</head>
+
+<body id="top">
+
+    <!-- ===== HEADER ===== -->
+    <header id="siteHeader">
+        <div class="header-left">
+            <img id="collegeLogo" class="logo">
+            <span id="headerCollegeName"></span>
+        </div>
+
+        <nav class="header-right">
+            <a href="index.html">Home</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="faq.html">FAQs</a>
+            <a href="faculty.html">Faculty</a>
+            <a href="academics.html">Academics</a>
+            <a href="courses.html">Courses</a>
+            <a href="fees.html">Fees</a>
+            <a href="admission.html">Admission</a>
+            <a href="contact.html">Contact</a>
+            <a href="event.html">Event</a>
+        </nav>
+    </header>
+
+    <!-- ===== ADMISSION SECTION ===== -->
+    <section class="academic-section">
+        <h1>Admission Process</h1>
+        <p style="max-width:800px;margin:auto;font-size:16px;">
+            Our admission process is simple, transparent, and based on merit as per university guidelines.
+        </p>
+
+        <!-- STEPS -->
+        <div class="admission-steps">
+            <div class="step-card">
+                <span class="step-number">1</span>
+                <h3>Online Registration</h3>
+                <p>Students must complete the online admission form with correct details.</p>
+            </div>
+
+            <div class="step-card">
+                <span class="step-number">2</span>
+                <h3>Document Verification</h3>
+                <p>Submitted documents are verified by the college admission committee.</p>
+            </div>
+
+            <div class="step-card">
+                <span class="step-number">3</span>
+                <h3>Merit List</h3>
+                <p>Merit list is published based on eligibility and academic performance.</p>
+            </div>
+
+            <div class="step-card">
+                <span class="step-number">4</span>
+                <h3>Fee Payment</h3>
+                <p>Selected students must complete fee payment to confirm admission.</p>
+            </div>
+        </div>
+
+        <!-- ===== ADMISSION FORM ===== -->
+        <h2 style="margin-top:60px;">Online Admission Form</h2>
+
+        <form class="admission-form">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="fullname" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Date of Birth</label>
+                    <input type="date" id="dateofbirth" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Mobile Number</label>
+                    <input type="tel" id="mobile" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Select Course</label>
+                    <select id="course" required>
+                        <option value="">-- Select Course --</option>
+                        <option value="B.Sc Information Technology">B.Sc Information Technology</option>
+                        <option value="B.Com">B.Com</option>
+                        <option value="BMS">BMS</option>
+                        <option value="BA">BA</option>
+                        <option value="Junior Science">Junior Science</option>
+                        <option value="Junior Commerce">Junior Commerce</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="category" required>
+                        <option value="">-- Select Category --</option>
+                        <option>Open</option>
+                        <option>OBC</option>
+                        <option>SC</option>
+                        <option>ST</option>
+                        <option>NT</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Application</button>
+            <div id="successTick" class="success-popup">
+                <span class="tick-icon">✔</span> Application Submitted!
+            </div>
+
+        </form>
+    </section>
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const logo = localStorage.getItem("collegeLogo");
+            const name = localStorage.getItem("collegeName");
+            const headerColor = localStorage.getItem("collegeHeaderColor");
+
+            if (logo) document.getElementById("collegeLogo").src = logo;
+            if (name) document.getElementById("headerCollegeName").innerText = name;
+            if (headerColor) document.getElementById("siteHeader").style.backgroundColor = headerColor;
+
+            
+        });
+    </script>
+
+   
+     <!-- ===== FOOTER ===== -->
+        <footer class="site-footer">
+
+            <div class="footer-container">
+
+                <div class="footer-box">
+                    <h3>College Website</h3>
+                    <p>
+                        Empowering students with quality education,
+                        modern facilities, and holistic development.
+                    </p>
+                </div>
+
+                <div class="footer-box">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="faculty.html">Faculty</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-box">
+                    <h3>More</h3>
+                    <ul>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="fees.html">Fees</a></li>
+                        <li><a href="admission.html">Admission</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="event.html">Events</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-box">
+                    <h3>Contact</h3>
+                    <p>Email: info@collegewebsite.com</p>
+                    <p>Phone: +91 98765 43210</p>
+                    <p>Maharashtra, India</p>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 College Website | All Rights Reserved</p>
+                <a href="#top" class="back-top">↑ Back to Top</a>
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const course = localStorage.getItem("selectedCourse");
+            const select = document.getElementById("course");
+
+            if (course && select) {
+                select.value = course;
+            }
+        });
+    </script>
+
+</body>
+</html>

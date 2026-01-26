@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Reviews</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./images/fav.jfif">
+</head>
+
+<body id="top">
+
+    <!-- ===== HEADER ===== -->
+    <header id="siteHeader">
+        <div class="header-left">
+            <img id="collegeLogo" class="logo">
+            <span id="headerCollegeName"></span>
+        </div>
+
+        <nav class="header-right">
+            <a href="index.html">Home</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="faq.html">FAQs</a>
+            <a href="faculty.html">Faculty</a>
+            <a href="academics.html">Academics</a>
+            <a href="contact.html">Contact us</a>
+            <a href="event.html">Event</a>
+            <a href="courses.html">Courses</a>
+            <a href="admission.html">Admission</a>
+            <a href="fees.html">Fees</a>
+        </nav>
+    </header>
+
+    <!-- ===== REVIEWS SECTION ===== -->
+    <section class="reviews-section">
+
+        <h1 class="reviews-title">Student Reviews & Ratings</h1>
+        <p class="reviews-sub">
+            Honest feedback from students about academics, faculty and campus life.
+        </p>
+
+        <!-- OVERALL RATING -->
+        <div class="overall-rating">
+            ⭐⭐⭐⭐☆ <span>4.4 / 5</span>
+            <p>Based on 1,200+ verified student reviews</p>
+        </div>
+
+        <!-- REVIEW GRID -->
+        <div class="review-grid">
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>
+                    Faculty is very supportive and explains concepts clearly.
+                    Practical learning is excellent.
+                </p>
+                <h4>Rahul Patil</h4>
+                <span>B.Sc IT</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★☆</div>
+                <p>
+                    Good infrastructure and well-structured syllabus.
+                    Placement guidance sessions are helpful.
+                </p>
+                <h4>Sneha Kulkarni</h4>
+                <span>BMS</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>
+                    Commerce department is excellent with strong focus on concepts
+                    and exam preparation.
+                </p>
+                <h4>Amit Shah</h4>
+                <span>B.Com</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★☆</div>
+                <p>
+                    Arts faculty encourages personality development and critical thinking.
+                </p>
+                <h4>Pooja Deshmukh</h4>
+                <span>BA</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>
+                    Science faculty provides excellent guidance for CET and NEET exams.
+                </p>
+                <h4>Omkar Jadhav</h4>
+                <span>JC Science</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★☆</div>
+                <p>
+                    Commerce stream gives a strong base for CA and CS preparation.
+                </p>
+                <h4>Neha More</h4>
+                <span>JC Commerce</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>© 2025 College Website</p>
+            <a href="#top" class="back-top">↑ Back to Top</a>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPT ===== -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const logo = localStorage.getItem("collegeLogo");
+            const name = localStorage.getItem("collegeName");
+            const headerColor = localStorage.getItem("collegeHeaderColor");
+
+            if (logo) document.getElementById("collegeLogo").src = logo;
+            if (name) document.getElementById("headerCollegeName").innerText = name;
+            if (headerColor) document.getElementById("siteHeader").style.backgroundColor = headerColor;
+        });
+    </script>
+
+</body>
+</html>
