@@ -240,44 +240,70 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
-document.querySelector('.admission-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Stop page from refreshing
+// Admission Form Handling
+document.addEventListener("DOMContentLoaded", function () {
+    const admissionForm = document.querySelector('.admission-form');
+    if (admissionForm) {
+        admissionForm.addEventListener('submit', function (e) {
+            e.preventDefault();
 
-    // Send to WhatsApp
-    sendtoWhatsapp();
+            // Get form values
+            const fullname = document.getElementById("fullname").value;
+            const email = document.getElementById("email").value;
+            const mobile = document.getElementById("mobile").value;
+            const dob = document.getElementById("dateofbirth").value;
+            const course = document.getElementById("course").value;
+            const category = document.getElementById("category").value;
 
-    const popup = document.getElementById('successTick');
-    
-    // Show the tick
-    if (popup) {
-        popup.classList.add('show');
+            // Construct WhatsApp Message
+            const message = `*NEW ADMISSION APPLICATION*\n\n` +
+                `*Name:* ${fullname}\n` +
+                `*Email:* ${email}\n` +
+                `*Mobile:* ${mobile}\n` +
+                `*DOB:* ${dob}\n` +
+                `*Course:* ${course}\n` +
+                `*Category:* ${category}`;
 
-        // Hide it again after 3 seconds
-        setTimeout(() => {
-            popup.classList.remove('show');
-        }, 3000);
+            const wpNumber = "919594662086";
+            const wpUrl = `https://wa.me/${wpNumber}?text=${encodeURIComponent(message)}`;
+
+            // Open WhatsApp
+            window.open(wpUrl, "_blank");
+
+            // Show success popup
+            const popup = document.getElementById('successTick');
+            if (popup) {
+                popup.classList.add('show');
+                setTimeout(() => {
+                    popup.classList.remove('show');
+                }, 3000);
+            }
+
+            // Reset form
+            admissionForm.reset();
+        });
     }
-
-    // Reset the form
-    this.reset();
 });
 
 function openTab(tabId) {
-  let tabs = document.querySelectorAll(".tab-box");
-  let btns = document.querySelectorAll(".tab-btn");
+    let tabs = document.querySelectorAll(".tab-box");
+    let btns = document.querySelectorAll(".tab-btn");
 
-  tabs.forEach(tab => tab.classList.remove("active"));
-  btns.forEach(btn => btn.classList.remove("active"));
+    tabs.forEach(tab => tab.classList.remove("active"));
+    btns.forEach(btn => btn.classList.remove("active"));
 
-  document.getElementById(tabId).classList.add("active");
-  event.target.classList.add("active");
+    document.getElementById(tabId).classList.add("active");
+    if (event && event.target) {
+        event.target.classList.add("active");
+    }
 }
+
 let selectedId = null;
 function selectCollege(key, el) {
     selectedCollege = key;
     // Update hidden select if it exists
     const hiddenSelect = document.getElementById("collegeSelect");
-    if(hiddenSelect) hiddenSelect.value = key;
+    if (hiddenSelect) hiddenSelect.value = key;
 
     document.querySelectorAll(".college-card").forEach(c =>
         c.classList.remove("active") // Using 'active' to match your JS
@@ -291,41 +317,77 @@ function handleEntry() {
         alert("Please select a college");
         return;
     }
-    
+
     // Show the tick
     const popup = document.getElementById('successTick');
-    if(popup) popup.classList.add('show');
+    if (popup) popup.classList.add('show');
 
     // Wait 1.5 seconds then load
     setTimeout(() => {
-        popup.classList.remove('show');
+        if (popup) popup.classList.remove('show');
         loadCollege();
     }, 600);
 }
 
 function toggleContact() {
     const options = document.getElementById("contactOptions");
-    options.style.display = options.style.display === "flex" ? "none" : "flex";
+    if (options) {
+        options.style.display = options.style.display === "flex" ? "none" : "flex";
+    }
 }
 
+// Global function alias for convenience
 function sendtoWhatsapp() {
-    let number = "919594662086";
-    let fullname = document.getElementById("fullname").value;
-    let email = document.getElementById("email").value;
-    let mobile = document.getElementById("mobile").value;
-    let dateofbirth = document.getElementById("dateofbirth").value;
-    let course = document.getElementById("course").value;
-    let category = document.getElementById("category").value;
-    let message = `*Admission Application*\n\n` +
-                  `*Full Name:* ${fullname}\n` +
-                  `*Email:* ${email}\n` +
-                  `*Mobile:* ${mobile}\n` +
-                  `*Date of Birth:* ${dateofbirth}\n` +
-                  `*Course:* ${course}\n` +
-                  `*Category:* ${category}`;
-    
-    window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, "_blank");
+    const form = document.querySelector('.admission-form');
+    if (form) {
+        form.requestSubmit(); // This triggers the submit event listener above
+    }
 }
+
+// Payment Form Interactivity
+document.addEventListener("DOMContentLoaded", function () {
+    const cardInput = document.getElementById('cardNum');
+    const expiryInput = document.getElementById('expiryDate');
+    const payForm = document.getElementById('payForm');
+
+    if (cardInput) {
+        cardInput.addEventListener('input', (e) => {
+            let val = e.target.value.replace(/\D/g, '');
+            let formatted = val.match(/.{1,4}/g)?.join(' ') || val;
+            e.target.value = formatted;
+        });
+    }
+
+    if (expiryInput) {
+        expiryInput.addEventListener('input', (e) => {
+            let val = e.target.value.replace(/\D/g, '');
+            if (val.length > 2) {
+                e.target.value = val.substring(0, 2) + '/' + val.substring(2, 4);
+            } else {
+                e.target.value = val;
+            }
+        });
+    }
+
+    if (payForm) {
+        payForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.innerText = "Verifying...";
+            btn.disabled = true;
+
+            setTimeout(() => {
+                const popup = document.getElementById('successTick');
+                if (popup) popup.classList.add('show');
+
+                setTimeout(() => {
+                    if (popup) popup.classList.remove('show');
+                    window.location.href = "index.html";
+                }, 2500);
+            }, 1500);
+        });
+    }
+});
 
 
     

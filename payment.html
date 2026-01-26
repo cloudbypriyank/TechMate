@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway - College Website</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="./images/fav.jfif">
+</head>
+
+<body id="top">
+
+    <!-- ===== HEADER ===== -->
+    <header id="siteHeader">
+        <div class="header-left">
+            <img id="collegeLogo" class="logo">
+            <span id="headerCollegeName"></span>
+        </div>
+
+        <nav class="header-right">
+            <a href="index.html">Home</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="faq.html">FAQs</a>
+            <a href="faculty.html">Faculty</a>
+            <a href="./academics.html">Academics</a>
+            <a href="courses.html">Courses</a>
+            <a href="fees.html">Fees</a>
+            <a href="admission.html">Admission</a>
+            <a href="contact.html">Contact</a>
+            <a href="event.html">Event</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <form action="">
+    
+            <div class="row">
+    
+                <div class="col">
+    
+                    <h3 class="title">billing address</h3>
+    
+                    <div class="inputBox">
+                        <span>full name :</span>
+                        <input type="text" placeholder="john deo">
+                    </div>
+                    <div class="inputBox">
+                        <span>email :</span>
+                        <input type="email" placeholder="example@example.com">
+                    </div>
+                    <div class="inputBox">
+                        <span>address :</span>
+                        <input type="text" placeholder="room - street - locality">
+                    </div>
+                    <div class="inputBox">
+                        <span>city :</span>
+                        <input type="text" placeholder="mumbai">
+                    </div>
+    
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>state :</span>
+                            <input type="text" placeholder="india">
+                        </div>
+                        <div class="inputBox">
+                            <span>zip code :</span>
+                            <input type="text" placeholder="123 456">
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <div class="col">
+    
+                    <h3 class="title">payment</h3>
+    
+                    <div class="inputBox">
+                        <span>cards accepted :</span>
+                        <img src="./images/card_img.png" alt="">
+                    </div>
+                    <div class="inputBox">
+                        <span>name on card :</span>
+                        <input type="text" placeholder="mr. john deo">
+                    </div>
+                    <div class="inputBox">
+                        <span>credit card number :</span>
+                        <input type="number" placeholder="1111-2222-3333-4444">
+                    </div>
+                    <div class="inputBox">
+                        <span>exp month :</span>
+                        <input type="text" placeholder="january">
+                    </div>
+    
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>exp year :</span>
+                            <input type="number" placeholder="2022">
+                        </div>
+                        <div class="inputBox">
+                            <span>CVV :</span>
+                            <input type="text" placeholder="1234">
+                        </div>
+                    </div>
+    
+                </div>
+        
+            </div>
+    
+            <input type="submit" value="proceed to checkout" class="submit-btn">
+                <p style="font-size: 15px; color: #555;">
+                    <a href="./admission.html" style="color: #0b5ed7; font-weight: bold; text-decoration: underline; text-align: center;">Click here to go back</a>
+                </p>
+           
+        </form>
+    
+    </div>    
+
+    <!-- ===== SUCCESS POPUP ===== -->
+    <div id="successTick" class="success-popup">
+        <span class="tick-icon">✔</span>
+        <div style="display: flex; flex-direction: column; margin-left: 10px;">
+            <strong style="color: white;">Success!</strong>
+            <span style="color: rgba(255,255,255,0.9); font-size: 13px;">Payment received successfully.</span>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h3>College Website</h3>
+                <p>Empowering students with quality education, modern facilities, and holistic development.</p>
+            </div>
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="./faq.html">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p>Email: info@collegewebsite.com</p>
+                <p>Phone: +91 98765 43210</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 College Website | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Apply Global Header Data (Keeping this here as it's small and page-specific)
+        document.addEventListener("DOMContentLoaded", function () {
+            const logo = localStorage.getItem("collegeLogo");
+            const name = localStorage.getItem("collegeName");
+            const headerColor = localStorage.getItem("collegeHeaderColor");
+
+            if (logo) {
+                const logoImg = document.getElementById("collegeLogo");
+                if (logoImg) logoImg.src = logo;
+            }
+            if (name) {
+                const nameSpan = document.getElementById("headerCollegeName");
+                if (nameSpan) nameSpan.innerText = name;
+            }
+            if (headerColor) {
+                const header = document.getElementById("siteHeader");
+                if (header) header.style.backgroundColor = headerColor;
+            }
+        });
+    </script>
+</body>
+
+</html>

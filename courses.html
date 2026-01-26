@@ -144,6 +144,18 @@
   <!-- ===== SCRIPT ===== -->
   <script>
     function selectCourse(courseKey) {
+      const courseNames = {
+        "bscit": "B.Sc Information Technology",
+        "bcom": "B.Com",
+        "bms": "BMS",
+        "ba": "BA",
+        "jc-science": "Junior Science",
+        "jc-commerce": "Junior Commerce"
+      };
+
+      if (courseNames[courseKey]) {
+        localStorage.setItem("selectedCourse", courseNames[courseKey]);
+      }
 
       const coursePages = {
         "bscit": "courses/bscit.html",

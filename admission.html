@@ -121,18 +121,70 @@
                 </div>
             </div>
 
-            <button type="submit" class="submit-btn">Submit Application</button>
+            <div id="feeLink" style="margin-bottom: 20px; text-align: center; display: none;">
+                <p style="font-size: 15px; color: #555;">
+                    Selected a course? <a href="fees.html" style="color: #0b5ed7; font-weight: bold; text-decoration: underline;">Click here to view detailed fees</a>
+                </p>
+            </div>
+            
+            <button type="submit" class="submit-btn" onclick="window.location.href='./payment.html'">Submit Application</button>
+            <button type="submit" class="apply-wp" onclick="sendtoWhatsapp()">Submit Details to WhatsApp</button>
             <div id="successTick" class="success-popup">
                 <span class="tick-icon">✔</span> Application Submitted!
             </div>
 
         </form>
     </section>
-    <script src="script.js"></script>
 
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h3>College Website</h3>
+                <p>Empowering students with quality education, modern facilities, and holistic development.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>More</h3>
+                <ul>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="fees.html">Fees</a></li>
+                    <li><a href="admission.html">Admission</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="event.html">Events</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p>Email: info@collegewebsite.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Maharashtra, India</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 College Website | All Rights Reserved</p>
+            <a href="#top" class="back-top">↑ Back to Top</a>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-
+            // Apply header data
             const logo = localStorage.getItem("collegeLogo");
             const name = localStorage.getItem("collegeName");
             const headerColor = localStorage.getItem("collegeHeaderColor");
@@ -141,83 +193,28 @@
             if (name) document.getElementById("headerCollegeName").innerText = name;
             if (headerColor) document.getElementById("siteHeader").style.backgroundColor = headerColor;
 
-            
-        });
-    </script>
-
-   
-     <!-- ===== FOOTER ===== -->
-        <footer class="site-footer">
-
-            <div class="footer-container">
-
-                <div class="footer-box">
-                    <h3>College Website</h3>
-                    <p>
-                        Empowering students with quality education,
-                        modern facilities, and holistic development.
-                    </p>
-                </div>
-
-                <div class="footer-box">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="reviews.html">Reviews</a></li>
-                        <li><a href="faq.html">FAQs</a></li>
-                        <li><a href="faculty.html">Faculty</a></li>
-                        <li><a href="academics.html">Academics</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-box">
-                    <h3>More</h3>
-                    <ul>
-                        <li><a href="courses.html">Courses</a></li>
-                        <li><a href="fees.html">Fees</a></li>
-                        <li><a href="admission.html">Admission</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="event.html">Events</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-box">
-                    <h3>Contact</h3>
-                    <p>Email: info@collegewebsite.com</p>
-                    <p>Phone: +91 98765 43210</p>
-                    <p>Maharashtra, India</p>
-                </div>
-
-            </div>
-
-            <div class="footer-bottom">
-                <p>© 2025 College Website | All Rights Reserved</p>
-                <a href="#top" class="back-top">↑ Back to Top</a>
-            </div>
-
-        </footer>
-
-    </div>
-
-    <script src="script.js"></script>
-</body>
-
-</html>
-
-
-    <!-- ===== SCRIPTS ===== -->
-    <script src="script.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
+            // Handle course selection and fee link
             const course = localStorage.getItem("selectedCourse");
             const select = document.getElementById("course");
+            const feeLink = document.getElementById("feeLink");
 
             if (course && select) {
                 select.value = course;
+                feeLink.style.display = "block";
+            }
+
+            // Update fee link visibility on change
+            if (select) {
+                select.addEventListener("change", function() {
+                    if (this.value) {
+                        feeLink.style.display = "block";
+                    } else {
+                        feeLink.style.display = "none";
+                    }
+                });
             }
         });
     </script>
-
 </body>
+
 </html>

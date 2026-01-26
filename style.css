@@ -5,6 +5,11 @@ body {
 html {
     scroll-behavior: smooth;
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
 
 
 /* ===== FIRST PAGE BACKGROUND ===== */
@@ -948,6 +953,29 @@ html {
   text-decoration: none;
   font-weight: 600;
 }
+.apply-wp {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 28px;
+    background: #00ff15;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .new-btn{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+    padding: 14px 28px;
+    background: #081b0a;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
 
 
 details {
@@ -960,8 +988,6 @@ details {
 }
 
 
-/* ===== ADMISSION PAGE ===== */
-/* ===== ADMISSION PAGE ===== */
 .admission-steps {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -1003,6 +1029,9 @@ details {
     border-radius: 18px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.12);
 }
+
+/* ===== ADMISSION FORM ===== */
+
 
 .form-row {
     display: flex;
@@ -1318,7 +1347,6 @@ details p {
     flex-wrap: wrap;
     margin-top: 40px;
 }
-
 .card {
     background: #eaf6ff;
     padding: 25px;
@@ -1554,6 +1582,122 @@ section {
     right: 20px; /* Slides into view */
 }
 
+/* ===== PAYMENT GATEWAY ===== */
+.payment-wrapper {
+    background: #f8fafc;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.payment-card {
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.payment-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.payment-title h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.card-logos {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.card-logos img {
+    height: 30px;
+    object-fit: contain;
+}
+
+.form-row {
+    margin-bottom: 18px;
+}
+
+/* .form-row label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-row input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    outline: none;
+    color: #1e293b;
+}
+
+.form-row input:focus {
+    border-color: #4a6bec;
+    box-shadow: 0 0 0 4px rgba(74, 107, 236, 0.1);
+} */
+
+.input-split {
+    display: flex;
+    gap: 15px;
+}
+
+.confirm-btn {
+    width: 100%;
+    padding: 16px;
+    background: #4a6bec;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.confirm-btn:hover {
+    background: #3b5bdb;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(74, 107, 236, 0.3);
+}
+
+.confirm-btn:active {
+    transform: translateY(0);
+}
+
+.cancel-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.cancel-link:hover {
+    color: #64748b;
+}
+
 .tick-icon {
     background: white;
     color: #28a745;
@@ -1564,4 +1708,97 @@ section {
     align-items: center;
     justify-content: center;
     font-size: 14px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:25px;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #2ecc71 60%, #27ae60 40.1%);
+}
+
+.container form{
+  padding:20px;
+  width:700px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+
+.container form .row{
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+}
+
+.container form .row .col{
+  flex:1 1 250px;
+}
+
+.container form .row .col .title{
+  font-size: 20px;
+  color:#333;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.container form .row .col .inputBox{
+  margin:15px 0;
+}
+
+.container form .row .col .inputBox span{
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container form .row .col .inputBox input{
+  width: 100%;
+  border:1px solid #ccc;
+  padding:10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.container form .row .col .inputBox input:focus{
+  border:1px solid #000;
+}
+
+.container form .row .col .flex{
+  display: flex;
+  gap:15px;
+}
+
+.container form .row .col .flex .inputBox{
+  margin-top: 5px;
+}
+
+.container form .row .col .inputBox img{
+  height: 34px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #000);
+}
+
+.container form .submit-btn{
+  width: 100%;
+  padding:12px;
+  font-size: 17px;
+  background: #27ae60;
+  color:#fff;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.container form .submit-btn:hover{
+  background: #2ecc71;
 }
