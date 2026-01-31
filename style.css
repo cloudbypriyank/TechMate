@@ -112,9 +112,12 @@ html {
 
 .college-card img {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: 160px;
+    object-fit: contain;   /* 🔥 KEY FIX */
+    background: white;     /* Makes DAV logo clean */
+    padding: 15px;         /* Space around logo */
 }
+
 
 .college-card h3 {
     padding: 15px;
@@ -379,20 +382,57 @@ html {
 .header-left {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
 }
 
 .logo {
-    height: 45px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;        /* 🔥 fills entire circle */
+    background: transparent;  /* 🔥 removes white */
+    padding: 0;               /* 🔥 no shrinking */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.header-right {
+    justify-content: center;
 }
 
+
 .header-right a {
-    color: hsl(265, 100%, 2%);
-   
-    margin-left: 20px;
+    position: relative;
+    padding: 10px 6px;     /* 🔥 vertical space */
+    font-size: 15px;
+    letter-spacing: 0.4px;
     text-decoration: none;
-    font-weight: bold;
+    color: #0f172a;
+    font-weight: 600;
 }
+
+
+/* animated underline */
+.header-right a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #4a6bec, #00c6ff);
+    border-radius: 6px;
+    transition: width 0.3s ease;
+}
+
+/* hover underline */
+.header-right a:hover::after {
+    width: 100%;
+}
+
+/* ACTIVE tab underline (STAYS) */
+.header-right a.active::after {
+    width: 100%;
+}
+
 
 
 /* HERO */
@@ -425,9 +465,9 @@ html {
 
 .hero-overlay {
     text-align: center;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     padding: 40px;
-    border-radius: 15px;
+    border-radius: 50px;
     max-width: 85%;
 }
 
@@ -448,9 +488,9 @@ html {
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1px;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
@@ -1081,7 +1121,6 @@ details {
     background: linear-gradient(135deg, #0b5ed7, #00c6ff);
     color: white;
     cursor: pointer;
-    font-weight: bold;
 }
 
 .submit-btn:hover {
@@ -1463,17 +1502,28 @@ ul {
 }
 
 /* ===== LOGO GRID ===== */
+.logos-wrapper {
+    overflow: hidden;
+    padding: 20px 0;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+}
+
 .company-logos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    display: flex;
+    width: max-content;
     gap: 30px;
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px;
+    animation: scroll-left-to-right 30s linear infinite;
+}
+
+.company-logos:hover {
+    animation-play-state: paused;
 }
 
 /* ===== LOGO CARD ===== */
 .logo-card {
+    flex: 0 0 200px;
     background: #ffffff;
     height: 120px;
     display: flex;
@@ -1483,6 +1533,15 @@ ul {
     border: 1px solid #e5e7eb;
     box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
     transition: all 0.35s ease;
+}
+
+@keyframes scroll-left-to-right {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 /* Logo image */
@@ -1801,4 +1860,13 @@ section {
 
 .container form .submit-btn:hover{
   background: #2ecc71;
+}
+
+#headerCollegeName {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;           /* White by default */
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    margin-left: 12px;
 }

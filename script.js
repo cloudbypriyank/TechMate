@@ -4,11 +4,11 @@ let slides = [];
 let autoSlide;
 
 const collegeThemes = {
-    ruparel: { header: "#4a6bec", footer: "rgba(8, 227, 243, 1)" },
-    kelkar: { header: "rgb(239, 136, 10)", footer: "#13255a" },
-    dav: { header: "rgb(12, 147, 226)", footer: "rgba(100, 214, 246, 1)" },
-    mulund: { header: "#8a4b08", footer: "#5c3205" },
-    somaiya: { header: "#ed1f11ff", footer: "#faf8fcff" }
+    ruparel: { header: "#abe137", footer: "#2a9d8f" },   // Deep blue & teal
+    kelkar:  { header: "#f4a261", footer: "#e76f51" },   // Warm orange & coral
+    dav:     { header: "#457b9d", footer: "#1d3557" },   // Blue shades
+    mulund:  { header: "#6d597a", footer: "#355070" },   // Muted purple & navy
+    somaiya: { header: "#b5179e", footer: "#720026" }    // Magenta & deep red
 };
 
 
@@ -35,14 +35,14 @@ function loadCollege() {
 
     const data = {
         ruparel: ["D.G. Ruparel College", "Doongasree Gangji Ruparel College of Arts, Science and Commerce, known as Ruparel College, is an undergraduate college in Matunga, Mumbai, Maharashtra, India. It is run by the Modern Education Society, Pune and is affiliated with the University of Mumbai.[1]", "images/ruparel/c1.jpeg", "images/ruparel/c2.jpeg",
-            ["images/ruparel/c2.jpeg", "images/ruparel/c3.jpeg", "images/ruparel/c4.jpeg"]],
-        kelkar: ["Kelkar College", "Vinayak Ganesh Vaze College of Arts, Science and Commerce (Autonomous) is a Mumbai University affiliated college located in Mulund, Mumbai. The college was established in 1984 by the Kelkar Education Trust.", "images/kelkar/c1.png", "images/kelkar/c2.png",
+            ["images/ruparel/c4.jpeg", "images/ruparel/c2.jpeg", "images/ruparel/c3.jpeg", "images/ruparel/c4.jpeg"]],
+        kelkar: ["V.G. Vaze College of Arts, Science and Commerce", "Vinayak Ganesh Vaze College of Arts, Science and Commerce (Autonomous) is a Mumbai University affiliated college located in Mulund, Mumbai. The college was established in 1984 by the Kelkar Education Trust.", "images/kelkar/logo-main.webp", "images/kelkar/c2.png",
             ["images/kelkar/c2.png", "images/kelkar/c3.jpg"]],
-        dav: ["DAV College", "D.A.V. College is a prestigious educational institution dedicated to providing quality education. It offers various undergraduate and postgraduate courses in Arts, Science, and Commerce streams.", "images/dav/logo.jpg", "images/dav/c2.jpeg",
-            ["images/dav/c2.jpeg", "images/dav/c3.jpeg"]],
+        dav: ["Ramanand Arya D.A.V College", "D.A.V. College is a prestigious educational institution dedicated to providing quality education. It offers various undergraduate and postgraduate courses in Arts, Science, and Commerce streams.", "images/dav/logo.jpg", "images/dav/c2.jpeg",
+            ["images/dav/c2.jpeg", "images/dav/c3.jpeg", "images/dav/c4.jpeg", "images/dav/c8.jpg"]],
         mulund: ["Mulund College of Commerce", "Mulund College of Commerce (MCC) is a premier educational institution in Mumbai, known for its excellence in commerce education and holistic development of students.", "images/mulund/c1.jpeg", "images/mulund/c2.jpeg",
             ["images/mulund/c2.jpeg", "images/mulund/c3.jpeg"]],
-        somaiya: ["SK Somaiya College", "S. K. Somaiya College is part of the Somaiya Vidyavihar University, offering a wide range of undergraduate and postgraduate programs with a focus on academic excellence and research.", "images/somaiya/c1.jpeg", "images/somaiya/c2.jpeg",
+        somaiya: ["S. K. Somaiya Degree College of Arts, Science And Commerce", "S. K. Somaiya College is part of the Somaiya Vidyavihar University, offering a wide range of undergraduate and postgraduate programs with a focus on academic excellence and research.", "images/somaiya/c1.jpeg", "images/somaiya/c2.jpeg",
             ["images/somaiya/c2.jpeg", "images/somaiya/c3.jpeg"]]
     };
 
@@ -83,7 +83,7 @@ function loadSlider(images) {
 
     updateSlide();
     clearInterval(autoSlide);
-    autoSlide = setInterval(nextSlide, 3000);
+    autoSlide = setInterval(nextSlide, 5000);
 }
 
 function updateSlide() {
@@ -215,6 +215,28 @@ function loadAcademics(type) {
     document.getElementById("facilityList").innerHTML =
         data[type].facilities.map(f => `<li>${f}</li>`).join("");
 }
+
+document.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.clientHeight;
+
+        if (pageYOffset >= sectionTop &&
+            pageYOffset < sectionTop + sectionHeight) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+});
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -388,8 +410,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+document.querySelectorAll('.header-right a').forEach(link => {
+    link.addEventListener('click', function() {
+        document.querySelectorAll('.header-right a').forEach(a => a.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
 
 
-    
+
+
 
 
