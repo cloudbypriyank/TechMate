@@ -1,234 +1,179 @@
-College Website Development
+# 🎓 College Website Development
 
-The College Website Development project is a collaborative front-end web application designed to help students explore detailed and structured information about various colleges. It includes multiple modules such as Courses, Fees, Admissions, Faculty, Reviews, Events, and more.
+The **College Website Development** project is a collaborative front-end web application designed to help students explore detailed and structured information about various colleges. It includes modules such as **Courses**, **Fees**, **Admissions**, **Faculty**, **Reviews**, **Events**, and more.
 
-Project Overview
+---
+
+## 📌 Project Overview
 
 This project focuses on:
 
-Seamless navigation
-
-Responsive and clean layouts
-
-Organized academic and administrative information
-
-Interactive UI elements
-
-Multi-page website structure
+- ✔️ Seamless navigation  
+- ✔️ Responsive and clean layouts  
+- ✔️ Organized academic & administrative information  
+- ✔️ Interactive UI elements  
+- ✔️ Multi-page website structure  
 
 Each team member developed different modules of the website.
 
-Team Members and Contributions
-1. Swayam Phodkar
-Faculty Page
+---
 
-Structured faculty table with:
+## 👥 Team Members & Contributions
 
-Sr. No.
+---
 
-Faculty Name
+### **1. Swayam Phodkar**
 
-Subject
+#### **Faculty Page**
+- Structured faculty table with:
+  - Sr. No.
+  - Faculty Name
+  - Subject
+  - Designation
 
-Designation
+#### **Academics Page**
+- Added dropdown menu for selecting levels:
+  - Pre-Primary  
+  - Primary  
+  - Upper Primary  
+  - Secondary  
+  - Junior College  
+- Each selection opens a dedicated detailed page.
 
-Academics Page
+#### **Pre-Primary & Junior College Sections**
+- Added:
+  - Overview  
+  - Timings  
+  - Facilities  
+  - Salient features  
 
-Dropdown menu for selecting academic levels:
+#### **Form Page Styling**
+- Applied CSS alignment & layout improvements.  
+- Implemented a functional **college search bar**.
 
-Pre-Primary
+#### **Explore Page**
+- Added “Welcome to College” message.  
+- Added “Explore Website” navigation button.
 
-Primary
+---
 
-Upper Primary
+### **2. Suyog Kamble**
 
-Secondary
+#### **Reviews Page**
+- Added student reviews with:
+  - Star ratings  
+  - Student details  
+  - Verified review indicator  
 
-Junior College
+#### **FAQ Section**
+Included Q&A related to:
+- Accreditation  
+- Affiliation  
+- Research  
+- Placement support  
+- Admission criteria  
+- Loan assistance  
+- Contact details  
 
-Each selection opens a detailed page.
-
-Pre-Primary & Junior College Sections
-
-Added overview, timings, facilities, and salient features.
-
-Form Page Styling
-
-Applied CSS styling and alignment.
-
-Implemented college search bar functionality.
-
-Explore Page
-
-Added “Welcome to College” message.
-
-Implemented “Explore Website” navigation button.
-
-2. Suyog Kamble
-Reviews Page
-
-Added student reviews with:
-
-Star ratings
-
-Student details
-
-Verified review indicator
-
-FAQ Section
-
-Included questions related to:
-
-Accreditation
-
-Affiliation
-
-Research
-
-Placement Support
-
-Admission criteria
-
-Loan assistance
-
-Contact details
-
-Courses Page
-
+#### **Courses Page**
 Courses included:
+- B.Sc IT  
+- B.Com  
+- BMS  
+- BA  
+- Junior College  
 
-B.Sc IT
+Each course contains:
+- Eligibility  
+- Required skills  
+- Syllabus overview  
+- Tools & technologies  
+- Career opportunities  
+- Average salaries  
+- Reasons to choose the course  
 
-B.Com
+#### **Admission Page**
+- Structured admission information.  
+- Added and linked the **“Apply for Admission”** button.
 
-BMS
+---
 
-BA
+### **3. Vivek Shirke**
 
-Junior College
+#### **IT Faculty Page**
+- Developed faculty table layout with:
+  - Sr. No.  
+  - Faculty Name  
+  - Subject  
+  - Designation  
 
-Each course page includes:
-
-Eligibility
-
-Required skills
-
-Syllabus overview
-
-Tools & technologies
-
-Career opportunities
-
-Average salaries
-
-Reasons to choose the course
-
-Admission Page
-
-Structured admission information.
-
-Added and linked the “Apply for Admission” button.
-
-3. Vivek Shirke
-IT Faculty Page
-
-Developed faculty table layout:
-
-Sr. No.
-
-Faculty Name
-
-Subject
-
-Designation
-
-Admission Process
-
+#### **Admission Process**
 Created a step-by-step flow:
+1. Online Registration  
+2. Document Verification  
+3. Merit List Publication  
+4. Fee Payment  
 
-Online Registration
-
-Document Verification
-
-Merit List Publication
-
-Fee Payment
-
-Online Admission Form
-
+#### **Online Admission Form**
 Inputs included:
+- Full Name  
+- Email  
+- Date of Birth  
+- Mobile Number  
 
-Full Name
+#### **Index Page Updates**
+- Added college logo  
+- Added IT course description  
 
-Email
+#### **Event Page**
+Added event images & styling for:
+- Shiv Jayanti  
+- Independence Day  
+- International Yoga Day  
 
-Date of Birth
+---
 
-Mobile Number
+## ⭐ **4. Fees & Form Page (Main Contributor)**
 
-Index Page Updates
+### **Fees Page**
+- Designed full layout & structure.  
+- Implemented **dynamic fee display** based on selected course.  
+- Created a **payment simulation system**:
+  - Billing details  
+  - Card details  
+  - Checkout button  
 
-Added logo and IT course description.
+### **Form Page**
+- Built a fully functional form to collect:
+  - User details  
+  - College search  
+- Added proper validations.  
+- Redirects to the Explore Page after submission.
 
-Event Page
+---
 
-Added event images and styling for:
+## 🛠️ Technologies Used
 
-Shiv Jayanti
+- **HTML5**  
+- **CSS3**
 
-Independence Day
+---
 
-International Yoga Day
+## ✨ Features
 
-4. Fees & Form Page (Main Contributor)
-Fees Page
+- Responsive and clean UI  
+- Search-enabled forms  
+- Dynamic fee display  
+- Faculty & academic details  
+- Review & FAQ system  
+- Detailed admissions workflow  
+- Event gallery  
+- Smooth multi-page navigation  
 
-Designed full page layout and structure.
+---
 
-Implemented dynamic fee display based on course selection.
+## 🏁 Conclusion
 
-Created a payment simulation system:
+The **College Website Development** project showcases strong teamwork, structured planning, and solid front-end development skills. Built entirely with **HTML and CSS**, it provides students with a clear, accessible, and interactive platform to explore college information.
 
-Billing details
-
-Card details
-
-Checkout button
-
-Form Page
-
-Implemented functional form to collect:
-
-User details
-
-College search
-
-Added proper validations.
-
-Redirects to the Explore Page after submission.
-
-Technologies Used
-
-HTML5
-
-CSS3
-
-Features
-
-Responsive and clean UI
-
-Search-enabled forms
-
-Dynamic fee display functionality
-
-Faculty and academic details
-
-Review and FAQ system
-
-Detailed admissions workflow
-
-Event gallery
-
-Conclusion
-
-The College Website Development project showcases teamwork, structured planning, and strong front-end development skills. Built entirely with HTML and CSS, the project provides a clear and accessible platform for students to explore college information.
+---
