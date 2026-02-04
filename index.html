@@ -19,7 +19,59 @@
         </div>
     </div>
 
-    <div id="collegeForm" class="college-bg">
+    <!-- From Uiverse.io by vinodjangid07 --> 
+
+
+
+
+    <div id="selectionForm" class="college-bg">
+        <h1>Select Your Details</h1>
+        <form class="entry-form" onsubmit="handleInitialEntry(event)">    
+            <input type="text" id="userName" placeholder="Name" required>
+            <input type="email" id="userEmail" placeholder="Email" required>
+            <input type="tel" id="userPhone" placeholder="Phone" required>
+            <input type="date" id="userDOB" placeholder="Date of Birth" required>
+
+            <div class="search-container" style="position: relative;">
+                <input type="text" id="collegeSearchInput" placeholder="🔍 Search College" onkeyup="filterColleges()" autocomplete="off" required>
+                <div id="searchResults" class="search-results"></div>
+                <input type="hidden" id="collegeSelectInput">
+            </div>
+
+            <button type="submit" class="premium-btn">Submit</button>
+        </form>
+    </div>
+
+    <div id="collegeForm" class="college-bg hidden">
+            <h1>Welcome to <span id="welcomeCollegeName"></span></h1>
+            <p>Click below to explore the campus website</p>
+            <div class="action-area">
+
+                <button class="cssbuttons-io-button" onclick="loadCollege()">
+                    Explore Website
+                    <div class="icon">
+                      <svg
+                        height="24"
+                        width="24"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path
+                          d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                          fill="currentColor"
+                        ></path>
+                      </svg>
+                    </div>
+                  </button>
+                
+            </div>
+            <!-- From Uiverse.io by adamgiebl --> 
+
+  
+    </div>
+
+    <!-- <div id="collegeForm" class="college-bg">
             <h1>Select Your College</h1>
 
             <div class="college-grid">
@@ -77,11 +129,24 @@
         </div>
         
         <select id="collegeSelect" hidden></select>
-    </div>
+    </div> -->
 
     <!-- ========== MAIN WEBSITE ========== -->
     <div id="website" class="hidden">
         <div class="contact-float">
+            <!-- Quote Popup -->
+            <div class="announcement-popup" id="announcementPopup">
+                <div class="popup-inner">
+                    <div class="popup-icon">💡</div>
+                    <div class="popup-text-wrapper">
+                        <div class="popup-title">Quote of the Moment</div>
+                        <div class="popup-msg" id="announcementText">Fetching inspiration...</div>
+                        <div id="quoteAuthor" style="font-size: 11px; color: #64748b; font-style: italic; margin-top: 4px;"></div>
+                    </div>
+                </div>
+                <button class="popup-close-btn" onclick="hideAnnouncement()">&times;</button>
+            </div>
+
             <button class="main-btn" onclick="toggleContact()">
                 ☎
             </button>

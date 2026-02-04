@@ -13,14 +13,99 @@ const collegeThemes = {
 
 
 
+function handleInitialEntry(event) {
+    event.preventDefault();
+    const college = document.getElementById("collegeSelectInput").value;
+    if (!college) {
+        alert("Please select a college");
+        return;
+    }
+    
+    selectedCollege = college;
+    
+    // Get college name for welcome message
+    const names = {
+        ruparel: "D.G. Ruparel College",
+        kelkar: "Kelkar College",
+        dav: "DAV College",
+        mulund: "Mulund College",
+        somaiya: "Somaiya College"
+    };
+    
+    document.getElementById("welcomeCollegeName").innerText = names[college];
+    document.getElementById("selectionForm").style.display = "none";
+    document.getElementById("collegeForm").classList.remove("hidden");
+}
+
+const allColleges = [
+    { id: "ruparel", name: "D.G. Ruparel College" },
+    { id: "kelkar", name: "Kelkar College" },
+    { id: "dav", name: "Ramanand Arya D.A.V College" },
+    { id: "mulund", name: "Mulund College of Commerce" },
+    { id: "somaiya", name: "Somaiya College" }
+];
+
+function filterColleges() {
+    const input = document.getElementById("collegeSearchInput");
+    const results = document.getElementById("searchResults");
+    const filter = input.value.toLowerCase();
+    
+    results.innerHTML = "";
+    if (!filter) {
+        results.style.display = "none";
+        return;
+    }
+
+    const filtered = allColleges.filter(c => c.name.toLowerCase().includes(filter));
+    
+    if (filtered.length > 0) {
+        filtered.forEach(college => {
+            const div = document.createElement("div");
+            div.className = "search-result-item";
+            div.innerText = college.name;
+            div.onclick = () => selectSearchResult(college.id, college.name);
+            results.appendChild(div);
+        });
+        results.style.display = "flex";
+    } else {
+        results.style.display = "none";
+    }
+}
+
+function selectSearchResult(id, name) {
+    const mainSelect = document.getElementById("collegeSelectInput");
+    const searchInput = document.getElementById("collegeSearchInput");
+    const results = document.getElementById("searchResults");
+
+    if (mainSelect) mainSelect.value = id;
+    if (searchInput) searchInput.value = name;
+    if (results) results.style.display = "none";
+    
+    // Feedback
+    if (mainSelect) {
+        mainSelect.style.borderColor = "#3b82f6";
+        setTimeout(() => mainSelect.style.borderColor = "#e2e8f0", 2000);
+    }
+}
+
+// Close search results when clicking outside
+document.addEventListener('click', (e) => {
+    const results = document.getElementById("searchResults");
+    const searchInput = document.getElementById("collegeSearchInput");
+    if (results && !results.contains(e.target) && e.target !== searchInput) {
+        results.style.display = "none";
+    }
+});
+
 function selectCollege(key, el) {
     selectedCollege = key;
-    document.getElementById("collegeSelect").value = key;
+    const collegeSelect = document.getElementById("collegeSelect");
+    if (collegeSelect) collegeSelect.value = key;
 
     document.querySelectorAll(".college-card").forEach(c =>
         c.classList.remove("active")
     );
-    el.classList.add("active");
+    if (el) el.classList.add("active");
 }
 
 function loadCollege() {
@@ -36,7 +121,7 @@ function loadCollege() {
     const data = {
         ruparel: ["D.G. Ruparel College", "Doongasree Gangji Ruparel College of Arts, Science and Commerce, known as Ruparel College, is an undergraduate college in Matunga, Mumbai, Maharashtra, India. It is run by the Modern Education Society, Pune and is affiliated with the University of Mumbai.[1]", "images/ruparel/c1.jpeg", "images/ruparel/c2.jpeg",
             ["images/ruparel/c4.jpeg", "images/ruparel/c2.jpeg", "images/ruparel/c3.jpeg", "images/ruparel/c4.jpeg"]],
-        kelkar: ["V.G. Vaze College of Arts, Science and Commerce", "Vinayak Ganesh Vaze College of Arts, Science and Commerce (Autonomous) is a Mumbai University affiliated college located in Mulund, Mumbai. The college was established in 1984 by the Kelkar Education Trust.", "images/kelkar/logo-main.webp", "images/kelkar/c2.png",
+        kelkar: ["V.G. Vaze College of Arts, Science and Commerce", "Vinayak Ganesh Vaze College of Arts, Science and Commerce (Autonomous) is a Mumbai University affiliated college located in Mulund, Mumbai. The college was established in 1984 by the Kelkar Education Trust.", "./images/kelkar/new1.jfif", "images/kelkar/c2.png",
             ["images/kelkar/c2.png", "images/kelkar/c3.jpg"]],
         dav: ["Ramanand Arya D.A.V College", "D.A.V. College is a prestigious educational institution dedicated to providing quality education. It offers various undergraduate and postgraduate courses in Arts, Science, and Commerce streams.", "images/dav/logo.jpg", "images/dav/c2.jpeg",
             ["images/dav/c2.jpeg", "images/dav/c3.jpeg", "images/dav/c4.jpeg", "images/dav/c8.jpg"]],
@@ -447,6 +532,47 @@ document.querySelectorAll('.header-right a').forEach(link => {
         document.querySelector('.header-right').classList.remove('active');
         document.querySelector('.mobile-menu-btn').classList.remove('active');
     });
+});
+
+// ===== RANDOM QUOTE POPUP API =====
+async function showQuote() {
+    const popup = document.getElementById('announcementPopup');
+    const textEl = document.getElementById('announcementText');
+    const authorEl = document.getElementById('quoteAuthor');
+    
+    if (!popup || !textEl) return;
+
+    try {
+        // Fetching from a reliable public quote API
+        const response = await fetch('https://api.quotable.io/random');
+        const data = await response.json();
+        
+        // Set content
+        textEl.innerText = `"${data.content || data.quote || 'Stay inspired!'}"`;
+        if (authorEl) authorEl.innerText = `- ${data.author || 'Anonymous'}`;
+
+        // Show popup
+        popup.classList.add('show');
+
+        // Auto-hide after 10 seconds
+        setTimeout(hideAnnouncement, 10000);
+    } catch (error) {
+        console.error("Error fetching quote:", error);
+    }
+}
+
+function hideAnnouncement() {
+    const popup = document.getElementById('announcementPopup');
+    if (popup) popup.classList.remove('show');
+}
+
+// Start the popup cycle after page loads
+window.addEventListener('load', () => {
+    // Show first quote after 3 seconds
+    setTimeout(showQuote, 3000);
+
+    // Show another one every 30 seconds
+    setInterval(showQuote, 30000);
 });
 
 
